@@ -14,11 +14,8 @@ const port = process.env.PORT || 3000;
 // conexion a base de datos
 const mongoose = require('mongoose');
 
-const dbName = 'veterinaria';
-const user = 'prueba_vet';
-const pass='qhhf21aJOlOeImRq';
 
-const uri = `mongodb+srv://${user}:${pass}@cluster0.jx7v5.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.jx7v5.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }
 )
  .then(()=> console.log('conectado a mongodb')) 
@@ -44,5 +41,6 @@ app.use('/mascotas', require('./router/mascotas'));
   
 // que escuche en el puerto
 app.listen(port, () => {
-  console.log('Ejemplo de la app listening at http://localhost:${port}')
+  console.log(`Ejemplo de la app escuchando en http://localhost:${port}`)
+
 })
