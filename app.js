@@ -41,6 +41,6 @@ app.use('/mascotas', require('./router/mascotas'));
   
 // que escuche en el puerto
 app.listen(port, () => {
-  console.log(`Ejemplo de la app escuchando en http://localhost:${port}`)
+  console.log(`Ejemplo de la app escuchando.v2 en http://localhost:${port}`)
 
 })
